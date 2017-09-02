@@ -72,6 +72,12 @@ module ROM
   class Struct < Dry::Struct
     MissingAttribute = Class.new(NameError)
 
+    def self.struct_methods
+      @struct_methods ||= instance_methods(false).each_with_object({}) do |name, methods|
+        methods[name] = instance_method(name)
+      end
+    end
+
     # Returns a short string representation
     #
     # @return [String]

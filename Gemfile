@@ -11,9 +11,10 @@ COMPONENTS.each do |component|
 end
 
 gem 'dry-types', git: 'https://github.com/dry-rb/dry-types', branch: 'master'
+gem 'dry-struct', git: 'https://github.com/dry-rb/dry-struct', branch: 'master'
 
 group :sql do
-  gem 'sequel', '~> 4.45'
+  gem 'sequel', '>= 4.45'
   gem 'sqlite3', platforms: [:mri, :rbx]
   gem 'jdbc-sqlite3', platforms: :jruby
   gem 'pg', platforms: [:mri, :rbx]
